@@ -104,9 +104,9 @@ user to adapt those paths.
   comprehension quiz, aimed at the artifact). The self-consistency pass comes
   first. A stranger finds missing information. A plan that mandates text its
   own gate forbids is contradictory information, invisible task by task.
-  The mechanism is named (a reader with no context), so that a harness
-  without subagents substitutes a fresh session. Rerun only for load-bearing
-  gaps, or the check loops on nitpicks.
+  The mechanism is named (a reader whose whole context is the file), so a
+  harness without subagents substitutes a fresh session on its own. Rerun
+  only for load-bearing gaps, or the check loops on nitpicks.
 - **Callers beside parsers (6)** — an audit asked who greps a message and
   concluded the test stubs needed no edit. The same change made a second
   command *invoke* the stub, and a pre-existing case went red inside the task.
@@ -140,6 +140,27 @@ Reach for the "keep the plan lean" line early, and add "keep each task under
 ~15 lines" if it balloons anyway. An executor that stops early needs the
 STOP-gate discipline pushed harder, so that the only stops are the declared
 ones. One that widens scope needs the anti-gold-plating clause damped in.
+
+The body states each requirement and leaves its reason here. Lines it no
+longer carries, each with the failure that returns it:
+
+- **"(default: a fresh implementer subagent per task)"** on the
+  execution-approach question — restore it if a plan starts naming an
+  execution approach the execution-prompt step then has to override.
+- **The reason after each requirement** — "a goal and a stack leave the
+  stranger re-deriving both" (1), "the plan-writing skill specifies the
+  command without ever running it" (4), and the deletion examples "a default
+  branch, a guard" (4). Restore a reason in the body when its requirement is
+  met in letter and missed in purpose: a preamble with a goal and no finish
+  line, a command that was specified but never run, a suite that only
+  reintroduces bugs.
+- **"(Mid-run, with them absent, the policy below logs the same conversion
+  OPEN)"** — restore it if a plan logs a converted door OPEN, or an executor
+  logs one settled.
+- **"Without subagents, a fresh session on the file alone"** — restore it on
+  a harness where the fresh-eyes check gets skipped for want of a subagent.
+- **"Over-splitting provable ones buries them in checkpoints"** — restore it
+  when plans split a provable change into a task per line.
 
 ## Install
 
