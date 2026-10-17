@@ -12,8 +12,7 @@ the choice that nothing settled in advance.
 **Fires on**
 
 - you catch yourself about to end a turn on a question that is cheap to undo
-- the user pushes a stalled session back with "just decide", "stop asking", or
-  "log the decision"
+- the user pushes back with "just decide" or "stop asking"
 - a stretch of work resolved judgment calls that never reached the log
 
 **Not for** a session that is ending. That session owes a handoff, not
@@ -25,9 +24,9 @@ another log entry.
 
 One entry per requirement in `SKILL.md`: the failure it corrects.
 
-- The compressed policy ends in an imperative, "answer your own question this
-  way and proceed", because the session is mid-stall and needs a release,
-  not a lecture.
+- "Keep working" closes both the release and the sweep, because the session
+  is mid-stall and needs a release, not a lecture. Said twice, once for each
+  way in.
 - The reversal-cost-only classifier and the conversion move (toggle, flag,
   parameter) come from the one-way / two-way door framing in the shareholder
   letters of Jeff Bezos. The conversion carries its cost guard because almost
@@ -72,23 +71,34 @@ One entry per requirement in `SKILL.md`: the failure it corrects.
   no file outside this folder. Installed alone, the skill gets only its own
   directory, so a pointer to the canonical text dangles. A mid-stall
   session needs the release anyway, not the full policy.
-- The section headings are branch conditions, not a sequence. The release
-  paragraph is true only for a reader who stalled on a question. A
-  sweep-entry reader who meets "answer your own question" has no question to
-  answer. Each entry path gets a section whose premise holds for it.
+- One paragraph serves both entry paths. "You stopped, or are about to
+  stop, on a choice" holds for a reader who stalled and for one about to,
+  and the sweep paragraph names its own premise ("a stretch of work with no
+  rows"), so neither reader meets an instruction whose premise is false.
 - Both status values are named in the field list itself. A log is written by
   one session and read by another. With only OPEN on the page, every session
   invents its own word for the other state.
-- "Creating the log if the run has none" closes the middle rung of the
-  fallback chain. A run directory whose log file does not exist yet otherwise
-  dead-ends between "log it in the run's log" and "no run directory at all".
 
 ## Tuning
 
-A session that stalls on reversible choices needs the explicit release. The
-closing imperative is what resumes the turn, so keep it within reach for a
-model that stops early. A model already oriented around checkpoints stalls
-this way more rarely. When it does, one application is enough.
+A session that stalls on reversible choices needs the explicit release.
+"Keep working" is what resumes the turn, so keep it within reach for a model
+that stops early. A model already oriented around checkpoints stalls this
+way more rarely. When it does, one application is enough.
+
+Lines the body no longer carries, each with the failure that returns it:
+
+- **"Now answer your own question this way and proceed"** — the closing
+  imperative of the release. Restore it if a model logs the row and then
+  ends the turn instead of continuing, above all after a sweep.
+- **The three branch headings** (stalled on one question · several calls
+  unlogged · fires twice) — restore them if a sweep-entry reader starts
+  hunting for a question to answer, or a stalled reader runs a sweep.
+- **"Created if the run has none"** — restore it if a run directory without
+  a decision log sends the row to the reply instead of creating the log.
+- **"A default you cannot defend is OPEN"** — folded into "settled means the
+  reverse is written and the default defended". Restore the explicit line if
+  undefended defaults start arriving marked settled.
 
 ## Install
 
