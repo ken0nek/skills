@@ -40,8 +40,8 @@ One entry per requirement in `SKILL.md`: the failure it corrects.
   reads as refusing the branch it documents.
 - **The mapping is executed here and stated nowhere else** — a copy inside
   every handoff rots the moment the mapping changes. The handoff's §8 carries
-  only the pointer. The content fallback names all six kinds, because a
-  shorter list drops the verification-owed and concerns material.
+  only the pointer. The three homes name the content they take, so a handoff
+  whose sections are not numbered still maps by content.
 - **Why delete** — a kept run directory anchors future work to a spec that
   nobody maintains, and conceals the live follow-ups buried in its §8.
 - **The already-shipped filter** — a backlog row that ships leaves entirely.
@@ -57,9 +57,10 @@ One entry per requirement in `SKILL.md`: the failure it corrects.
 - **Both commits pathspec-scoped** — an unscoped pre-commit swallows the
   graduations or another session's staged files. Then "one hash holds what
   graduated and what died" becomes false.
-- **The two-way-door sentence** — "deleting" sits on the policy's one-way-door
-  list. The sentence pre-empts a policy-carrying session stopping at the gate
-  that this skill exists to walk through.
+- **"Every byte stays in history"** — "deleting" sits on the policy's
+  one-way-door list. With the run directory committed first, the deletion is
+  reversible, and the sentence states that fact so a policy-carrying session
+  does not stop at the gate this skill exists to walk through.
 
 ## Tuning
 
@@ -70,6 +71,23 @@ transcript, and a decision doc is exactly the agent-authored shape that pads
 most. On a model that stops early, the risk is a harvest that graduates the
 artifacts and then reports back without deleting. The close is not done
 until the commit exists.
+
+Lines the body no longer carries, each with the failure that returns it:
+
+- **The content fallback** — "by section number, or by content where its
+  sections are not numbered: settled decisions, decisions still the user's,
+  workflow lessons, unfinished follow-ups, verification owed to the user,
+  concerns worth tracking". Restore it when a handoff without numbered
+  sections loses its verification-owed or concerns material in the harvest.
+- **"A run under review stays live and keeps its directory"** — the
+  preconditions carry it. Restore it if a harvest starts on a run whose
+  handoff the user has not answered.
+- **"Check each against the code and its git history first"** — folded into
+  "one that already shipped graduates nowhere". Restore the explicit check if
+  shipped follow-ups start landing in the backlog.
+- **"With step 2 behind it, the deletion is a two-way door"** — kept as
+  "every byte stays in history". Restore the door wording if a session
+  carrying the policy stops before `git rm`.
 
 ## Install
 
