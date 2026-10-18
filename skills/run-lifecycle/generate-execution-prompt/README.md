@@ -54,7 +54,9 @@ short.
 - **Both copy boundaries stated** — the plan wraps its policy in markers and
   a fence. The prompt carries neither. Left implicit, a literal comparison
   always differs, and the remedy pastes the markers in. The template's own
-  fence has the same shape.
+  `text` fence has the same shape: it belongs to this file, and the output
+  opens with the HTML comment. "Fixed text stays verbatim" is the line that
+  carries it now.
 - **The override is flagged beside "verbatim"** — an unflagged second
   exception reads as not being one, and a careful generator keeps the wrong
   text.
@@ -63,8 +65,9 @@ short.
 - **Fresh-eyes check** — rehearses the paste before the clear, while fixing
   is cheap. The subagent gets the repo because the executor will. It is told
   not to execute, because the file is engineered to start a run. The
-  mechanism is named so that a harness without subagents substitutes a fresh
-  session.
+  mechanism is named (a stranger whose context is the file and what it points
+  to), so a harness without subagents substitutes a fresh session on its
+  own.
 - **`{{code repo root}}` is its own slot** — a simulated executor resolves
   the plan's relative paths against the run directory. The two can differ.
 - **`{{handoff path}}` is a slot** — a fixed `{{run dir}}/handoff.md` on the
@@ -92,7 +95,11 @@ short.
 - **Autonomy block** — the vendor's autonomous-pipeline reminder fused with
   the policy's stop conditions: over-asking and end-on-a-promise in one
   paragraph. The scope line is shared text, because one executor class
-  widens and another takes adjacent actions.
+  widens and another takes adjacent actions. Some harnesses now ship a close
+  variant of this paragraph in their own system prompt, so there the
+  executor reads it twice. The set is tool-neutral and other harnesses carry
+  no such line, so the paragraph stays; drop it only when every supported
+  harness carries its own.
 - **Deliverable length calibrated in place** — an executor that writes long
   files runs `notes.md` and `handoff.md` long. The skeleton alone does not
   imply length.
@@ -162,6 +169,25 @@ and the handoff re-renders a log that nobody checked.
 
 Give an executor that pads its files a large output budget and expect to trim.
 Effort is harness-side. No prompt can set it, and the header names none.
+
+The generator steps state each slot and leave its reason here. Lines they
+no longer carry, each with the failure that returns it:
+
+- **"Lessons are the only source: an executor's failure mode is observed in
+  a run, never cast in advance"** — restore it if a generator fills the
+  addendum from the Tuning menu, or asks the user which failure mode to
+  prepare for.
+- **"The run's other artifacts stay where they are, and the handoff's §7
+  points back at them"** — restore it if a private handoff path drags the
+  plan and notes out of the run directory with it.
+- **"Without subagents, a fresh session on the file alone"** — restore it on
+  a harness where the fresh-eyes check gets skipped for want of a subagent.
+- **"The `text` fence belongs to this file; the output opens with the HTML
+  comment"** — restore it if a generated prompt opens with the fence, or
+  ships without the run header.
+- **"`docs/plans/<YYYY-MM-DD>-<slug>/` by default"** in step 1 — restore it if
+  a generator cannot find the run directory without the plan-writing step's
+  default.
 
 When a run misses, tune it by asking whether the model did not *know* or did
 not *try*. Confidently wrong with full context in hand means move the

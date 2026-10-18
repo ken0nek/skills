@@ -7,53 +7,38 @@ license: MIT
 # generate-execution-prompt
 
 The step between plan approval and the context clear. Its reader is **the
-stranger** — the executor session that opens with this file and the repo,
-nothing else. Your only deliverable is the file; never execute the plan.
+stranger**: the executor session that opens with this file and the repo.
+Your only deliverable is the file; never execute the plan.
 
-## Generate
+1. Read `plan.md` in the run directory fully. A lone plan file gets a run
+   directory created beside it and moves in as `plan.md`.
 
-1. Read `plan.md` in the run directory fully —
-   `docs/plans/<YYYY-MM-DD>-<slug>/` by default, or wherever this repo keeps
-   planning docs. A lone plan file gets a run directory created beside it
-   and moves in as `plan.md`.
-
-2. Write `execution-prompt.md` beside it from the template below — the whole
-   first message the user pastes. The `text` fence belongs to this file; the
-   output opens with the HTML comment.
-   - Fixed text stays verbatim. Fill every `{{slot}}` from the plan; expand
-     `{{run dir}}` and `{{code repo root}}` to real paths everywhere (they
-     can differ); delete slot lines that do not apply.
-   - `{{mission}}`: 3–6 sentences from the plan's context preamble, written
-     for a reader who has only the file.
-   - `{{stop gates}}`: every STOP gate from the plan, with its exact
-     question and why it cannot be defaulted — a gate on a measurement names
-     the measurement and the task it gates; none → "None — no pre-planned
-     stops." One gate: "STOP before task 4 — it drops `legacy_id` from
-     `events`. Ask: does any external consumer still read `legacy_id`? Not
-     defaultable: the drop is destructive and the consumers live outside
-     this repo."
-   - `{{repo gate commands from the plan}}`: the plan's full gate, or the
-     repo's build, test, and lint invocations — say so in your report.
-   - `{{executor addendum}}`: the open rows of this repo's lessons file
+2. Write `execution-prompt.md` beside it from the template below, the whole
+   first message the user pastes. Fixed text stays verbatim. Fill every
+   `{{slot}}`; expand `{{run dir}}` and `{{code repo root}}` to real paths
+   (they can differ); delete slot lines that do not apply.
+   - `{{mission}}`: 3–6 sentences from the preamble, for a reader with only
+     the file.
+   - `{{stop gates}}`: every STOP gate, its exact question, why it cannot be
+     defaulted; none → "None — no pre-planned stops." One gate reads: "STOP
+     before task 4 — it drops `legacy_id` from `events`. Ask: does any
+     external consumer still read `legacy_id`? Not defaultable: the drop is
+     destructive and the consumers live outside this repo."
+   - `{{repo gate commands from the plan}}`: the plan's full gate, else the
+     repo's build, test and lint invocations — say which.
+   - `{{executor addendum}}`: the open rows of the lessons file
      (`docs/LESSONS.md` by default) whose target is the execution prompt,
-     each as one line of instruction to the executor; none → delete the
-     slot line. Lessons are the only source: an executor's failure mode is
-     observed in a run, never cast in advance.
-   - `{{handoff path}}`: `{{run dir}}/handoff.md`. When the code repo is
-     public, a private home outside it — the run's other artifacts stay
-     where they are, and the handoff's §7 points back at them.
-   - Policy block: compare its text with the plan's "Decision policy for
-     execution" section, ignoring the plan's `--- policy block start/end ---`
-     markers and fence. On a difference, tell the user and use the plan's
-     text, without markers or fence. No policy section → keep the template's
-     and note it.
+     one line of instruction each; none → delete the slot line.
+   - `{{handoff path}}`: `{{run dir}}/handoff.md`, or a private home outside
+     a public repo.
+   - Policy block: compare with the plan's "Decision policy for execution",
+     ignoring the plan's markers and fence. On a difference, say so and use
+     the plan's text. No policy section → keep the template's and note it.
 
-3. Fresh-eyes check: one subagent as the stranger, told to answer only (the
-   file is built to start a run), its context the generated file and the
-   repo files it points to — "Following only this prompt, can you start
-   executing correctly? List everything you must guess." Without subagents,
-   a fresh session on the file alone. Fix what it finds; rerun only for
-   load-bearing gaps.
+3. Fresh-eyes check: one subagent as the stranger, told to answer only, its
+   context the generated file and the repo files it points to — "Following
+   only this prompt, can you start executing correctly? List everything you
+   must guess." Fix what it finds; rerun only for load-bearing gaps.
 
 4. Report: the file path, what the check caught, and the user's next steps
    (clear the context, paste).
