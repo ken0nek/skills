@@ -80,6 +80,13 @@ description sit under *Tuning* with the failure that would return them.
   asks open questions with no menu. The map is capped and conditional. A map
   of a space for someone who lives in it is padding, and it delays the part
   they came for.
+- **Look, not read, for taste they judge by eye** — candidates for a layout
+  or a color written as lines of trade-off ask the user to picture each one,
+  and they answer from the picture they imagined. Built behind one switcher,
+  the candidates are the thing itself, and the answer is to what they saw.
+  The cost bound keeps it to candidates that are quick to build. A slow
+  build becomes the question this skill exists to avoid: work spent before
+  the answer that settles it.
 - **Stop on the recommendation, not on the tree** — the governing line.
   The stop condition of an interview skill is an emptied tree, every branch
   visited. Loaded beside this one, the exhaustive criterion wins by default,
@@ -121,6 +128,12 @@ because asking reads as respectful. The default-is-a-decision clause corrects
 that. The opposite drift also appears: a model that settles every question
 itself, including one that is the user's appetite for cost or risk. Watch for
 a reply that asks nothing while naming a choice as theirs.
+
+A model that over-applies the switcher builds a page for a choice the user
+cannot judge by eye: a retry count, a key name, a budget. It spends a build
+on a question one line of trade-off answers. Sharpen *judge by eye* before
+adding an exclusion list. The opposite drift is a visual choice still sent
+as prose: candidates for a layout, each one a sentence.
 
 Where an installed interview skill does the asking, watch for its stop
 condition surviving the stop-on-the-recommendation line. The round keeps

@@ -19,8 +19,10 @@ earns a question: a reverse you cannot write, and taste on their product's
 outward surface — asked here because they are present and it costs a line.
 
 Each surviving question carries two to four concrete candidates, one line
-of trade-off each, and your pick, marked and first. Map the space in at
-most five lines, and only when their question shows they do not live in it.
+of trade-off each, and your pick, marked and first. When the candidates are
+taste on a surface they judge by eye and building them is quick, build them
+behind one switcher and ask them to look, not read. Map the space in at most
+five lines, and only when their question shows they do not live in it.
 
 Stop when the next answer would leave your recommendation where it is, not
 when the tree is empty. A skipped answer → take your default, name it as an
