@@ -14,7 +14,7 @@ no run at all. There it decides which decisions reach you, and in what shape.
 | [generate-plan](skills/run-lifecycle/generate-plan/) | decisions the plan can settle in advance | `plan.md` — decision table, STOP gates, per-task verification, the executor contract with its §0–8 handoff |
 | [decide-and-log](skills/decisions/decide-and-log/) | decisions met in the moment, any session, in or out of the flow | a decision-log row, and a session that keeps moving |
 | [now-what](skills/decisions/now-what/) | decisions the user must make, when they have lost track of what those are | an answer they can act on — what to know, what to do, what only they decide |
-| [explain-to-decide](skills/decisions/explain-to-decide/) | one decision the user cannot evaluate yet | the option expanded — a real instance, the diff, the consequence, a pick and its counter |
+| [explain-to-decide](skills/decisions/explain-to-decide/) | one decision the user cannot evaluate yet | the option expanded — a real instance (built behind a switcher when it is judged by eye), the diff, the consequence, a pick and its counter |
 | [clarify-to-decide](skills/decisions/clarify-to-decide/) | a decision the user brings, before the options exist | only the questions that change the answer — then a pick, its counter, and a row to paste forward |
 | [harvest-run](skills/run-lifecycle/harvest-run/) | decisions graduating out of the run | decision records, lessons, backlog rows — and no run directory |
 
