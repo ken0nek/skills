@@ -109,6 +109,8 @@ generator.
   defines, and the input `harvest-run` reads by section number. Each line:
   - *A fresh executor, the plan wins over the spec* — a fresh-eyes check
     once found the spec overriding two corrections the plan had measured.
+    An execution skill that ranks the spec above the plan is overridden by
+    name, or the executor holds two opposite authority rules.
   - *`notes.md`, at the moment things happen* — Thariq Shihipar's running
     implementation-notes pattern
     (https://claude.com/blog/a-field-guide-to-claude-fable-finding-your-unknowns),

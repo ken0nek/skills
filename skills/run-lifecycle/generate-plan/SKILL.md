@@ -37,9 +37,9 @@ question: can the stranger execute it without guessing?
 2. **One-way-door sweep.** List the decisions this work will force and
    classify each by reversal cost alone. Cheap to reverse → decide it now;
    if you cannot state your pick and why, it is unresolved: on an
-   outward-facing surface the user judges by eye, plan a task that builds two or three named versions and log
-   the choice OPEN; elsewhere, a bounded spike with the decision attached to
-   its outcome. Looks irreversible → convert it (a flag, a parameter, both
+   outward-facing surface the user judges by eye, plan a task that builds
+   two or three named versions and log the choice OPEN; elsewhere, a
+   bounded spike with the decision attached to its outcome. Looks irreversible → convert it (a flag, a parameter, both
    variants) when the conversion is quick; converted means decided. Genuinely
    irreversible → ask the user before handing the plan over, or a **STOP
    gate** in the plan: the task, the exact question, why it cannot be
@@ -147,27 +147,28 @@ stop, ask, and end your turn rather than ending on a promise.
 ```markdown
 ## Executor contract
 
-You are executing this plan with no other context. Where the spec differs
-from the plan, the plan wins; its decision table says why. Run it through
-an installed subagent-driven execution skill if there is one, else task by
-task yourself. Where any skill says to stop and ask the user, the decision
-policy above governs instead.
+You are executing this plan with no other context. Run it through an
+installed subagent-driven execution skill if there is one, else task by
+task yourself. Where the spec differs from the plan, the plan wins, even
+where a skill ranks the spec first; the decision table says why. Where
+any skill says to stop and ask the user, the decision policy above
+governs instead.
 
 Keep `notes.md` beside this plan, appended at the moment things happen,
 never in batches:
-- The decision log the policy names: this plan's decision table, then one row per decision you
-  make, in the policy's five fields. A ruling an execution skill records in
-  its own ledger is copied here with its reverse; that ledger is deleted
-  at the end, and this file is not.
+- The decision log the policy names: this plan's decision table, then
+  one row per decision you make, in the policy's five fields. A ruling an
+  execution skill records in its own ledger is copied here with its
+  reverse; that ledger is deleted at the end, and this file is not.
 - Deviations from the plan, and why.
 - Surprises: anything that contradicted the plan's assumptions.
 - Open questions for the user.
 
 Text and code this plan supplies verbatim are claims about the tree: check
-each against the tree before committing it, and log a mismatch you fix as
-a deviation. A subagent's report is a
-claim: re-measure its numbers before relaying them. Report only what a
-tool result from this session shows, and say plainly what is not verified.
+each against the tree before committing it, and log a mismatch you fix
+as a deviation. A subagent's report is a claim: re-measure its numbers
+before relaying them. Report only what a tool result from this session
+shows, and say plainly what is not verified.
 
 The user is not watching and cannot answer mid-run. Proceed through
 reversible work without asking. Deliver the plan's scope: a flaw or a
@@ -178,6 +179,7 @@ policy could not convert, or at completion; stopping means writing the
 handoff below and ending on its question. A summary that announces the
 next step, an offer to continue, and a list of decisions none of which
 blocks the work are not stops: do the next thing instead.
+
 {{lessons}}
 
 At every stop and at completion:
@@ -212,9 +214,9 @@ At every stop and at completion:
    7. Where the detail lives — the plan, notes, and per-task reports (say
       if any were deleted).
    8. Next steps — the user's ordered list. At a stop it ends on the
-      stop's question; at completion it ends with: once the work lands, close the
-      run — graduate this directory's decisions, lessons, and follow-ups to
-      their durable homes, then delete it.
+      stop's question; at completion it ends with: once the work lands,
+      close the run — graduate this directory's decisions, lessons, and
+      follow-ups to their durable homes, then delete it.
 4. Close with a five-line chat summary that links the handoff and names
    the most important decision the user owes.
 ```
