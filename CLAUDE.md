@@ -49,8 +49,9 @@ real run.
   the reader cast.
 - **Tool-neutral.** `git` is the one assumed dependency. State the property
   a command must have, never a tool or a flag.
-- **The execution-prompt template owns the handoff contract** (its §0–8
-  list). Never abbreviate it. Route every contract change there.
+- **`generate-plan`'s executor contract owns the handoff contract** (its
+  §0–8 list). `harvest-run` reads it by section number. Never abbreviate
+  it. Route every contract change there.
 - **The four `decisions/` skills are one policy at four distances.** Three
   claims recur and must not drift: the reversal-cost classifier, the
   taste-on-their-surfaces exception, *you argue, they decide*. A change to

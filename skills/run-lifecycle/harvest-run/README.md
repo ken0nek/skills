@@ -49,11 +49,11 @@ One entry per requirement in `SKILL.md`: the failure it corrects.
   done.
 - **Reference search before `git rm`** — a harvest that skips it leaves a
   memo pointing at the run it deleted.
-- **Lesson targets are a fixed set** — *execution prompt*, *plan*, *skill*. A
-  free-text "candidate target" left the next run's prompt generator with
-  nothing to select on. Executor tuning then had no path back into the run,
-  and surfaced instead as a question to the user. A row targeting the
-  execution prompt is written as the line the executor will read.
+- **Lesson targets are a fixed set** — *executor*, *plan*, *skill*. A
+  free-text "candidate target" left the next plan with nothing to select
+  on. Executor tuning then had no path back into the run, and surfaced
+  instead as a question to the user. A row targeting the executor is
+  written as the line the executor will read.
 - **Both commits pathspec-scoped** — an unscoped pre-commit swallows the
   graduations or another session's staged files. Then "one hash holds what
   graduated and what died" becomes false.

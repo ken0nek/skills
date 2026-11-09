@@ -27,8 +27,8 @@ adapting the paths to wherever this repo keeps each:
    a follow-up.
 2. **Workflow lessons** → §6 into the lessons file (`docs/LESSONS.md` if
    none), newest first; applied ones marked, the rest open with one target
-   from *execution prompt* · *plan* · *skill*. A row targeting the execution
-   prompt is the line the next executor will read, paste-ready.
+   from *executor* · *plan* · *skill*. A row targeting the executor is the
+   line the next plan's executor contract carries, paste-ready.
 3. **Follow-ups** → `docs/BACKLOG.md`, each with its evidence: §8's undone
    items, §4 rows still the user's, §2 steps not run, §5 concerns worth
    tracking. One that already shipped graduates nowhere.
