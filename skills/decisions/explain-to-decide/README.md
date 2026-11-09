@@ -20,8 +20,9 @@ before they can answer it. The argument was made and did not land.
 questions owed when the settling information is theirs.
 
 **Leaves behind** the option expanded: a real instance from their tree, the
-change as a diff, the consequence under each option. Then a pick, and its
-strongest counter.
+change as a diff, the consequence under each option. A choice they judge by
+eye also leaves a throwaway page with every option behind one switcher. Then
+a pick, and its strongest counter.
 
 ## Why each line exists
 
@@ -72,6 +73,12 @@ failure that would return them.
   comprehension and answers nothing. An instance they cannot go and look at
   is an assertion. The constructed case is labelled, because an invented
   example presented as found is worse than either.
+- **Build it when they judge it by eye** — a layout, a color, a motion
+  described in prose makes the reader render both options in their head,
+  and the description of a surface is not the surface. A throwaway with
+  every option behind one switcher lets them choose by looking. The building
+  is handed to a prototyping skill by role, and the user's own file stays
+  as it is, because the change is still theirs to make.
 - **Diff, not description** — a sentence about a change carries the
   ambiguity that the change resolves, and the request names diffs
   explicitly. The extension to prose and config matters because that is
@@ -104,6 +111,12 @@ A model that avoids commitment states both options fairly and declines the
 counter-argument. That reads as balance and functions as a refusal to help.
 Watch for a recommendation that appears only in the final sentence and
 carries no reason.
+
+A model that over-applies the switcher builds a prototype for a row the
+user cannot judge by eye: a retry count, a key name, a dependency. The page
+adds a file and answers nothing a diff would not. Sharpen *judge by eye*
+before adding an exclusion list. Watch also for the switcher built into the
+user's own file, which makes the change the body says to leave unmade.
 
 Over-firing looks like this skill activating on a plain request to explain
 something, with no decision behind it. If that appears, sharpen the

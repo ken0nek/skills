@@ -26,6 +26,8 @@ than your own summary of it. Then that row only, at full depth:
 
 1. A real instance of theirs, named so they can go to it. None exists →
    construct the smallest one in their names, and say so.
+   Taste on a surface they judge by eye → build it instead: every option
+   behind one switcher (an installed prototyping skill), and point at it.
 2. The change as a diff: code, config or prose, before and after.
 3. The consequence under each option, for whoever uses the thing and for
    whoever maintains it.
