@@ -99,8 +99,13 @@ Before stopping at an apparent one-way door, try to convert it into a
 two-way door: implement the options instead of choosing (a toggle, a config
 flag, a parameter, both variants side by side), pick a sensible default, and
 log it as OPEN for the user — but only when the conversion is genuinely
-quick. If keeping the options open is itself costly, it is a real one-way
-door: stop, ask, and end your turn rather than ending on a promise.
+quick. For a surface the user judges by eye, the options are a throwaway
+prototype with every variant behind one switcher (an installed prototyping
+skill builds it); for a code or document shape, several candidates built
+in parallel, judged against a rubric written before any is read, with the
+best parts grafted into one (an installed arena-style skill runs it). If
+keeping the options open is itself costly, it is a real one-way door:
+stop, ask, and end your turn rather than ending on a promise.
 ```
 
 The one-way / two-way door framing comes from the shareholder letters of
