@@ -4,7 +4,7 @@ Reading for whoever edits this skill. A run reads `SKILL.md` alone.
 
 Expand one option far enough that the user can choose it.
 
-One of seven skills built on one rule: **reversal cost decides who decides.**
+One of six skills built on one rule: **reversal cost decides who decides.**
 
 **The moment it owns.** After a decision is correctly routed to the user and
 before they can answer it. The argument was made and did not land.

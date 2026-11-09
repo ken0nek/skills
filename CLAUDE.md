@@ -2,7 +2,7 @@
 
 For whoever edits this repo. Nothing here ships with a skill.
 
-One decision policy and the seven skills that carry it: **reversal cost
+One decision policy and the six skills that carry it: **reversal cost
 decides who decides. Resolution cost decides whether to build the options.** A
 line that does not serve that is not this repo's to carry.
 
@@ -22,7 +22,7 @@ real run.
 
 ## Invariants
 
-- **Seven skills, one per decision moment.** An eighth must own a moment
+- **Six skills, one per decision moment.** A seventh must own a moment
   these do not. Otherwise it belongs inside one. Each `README.md` opens
   with the moment it claims.
 - **Each skill installs alone.** The policy is embedded, never linked. No
@@ -36,8 +36,8 @@ real run.
   different answer change my recommendation*, *is this row theirs*.
 - **A rule earns SKILL.md by correcting a failure that recurs.** What one
   run hit is a harvest lesson, not a rule.
-- **POLICY.md is canonical.** The README, `generate-plan`, and
-  `generate-execution-prompt` embed it verbatim. The `decisions/` skills
+- **POLICY.md is canonical.** The README and `generate-plan` embed it
+  verbatim. The `decisions/` skills
   compress it to the clauses they reach. Edit POLICY.md first, then every
   embed (`grep -rli "reversal cost" skills README.md`), then run `check.sh`.
   Carrying an edit into a compression is a reading job.
@@ -60,9 +60,6 @@ real run.
   recipe.** The output shape lives in the body. Its human summary is the
   README's *Leaves behind* column.
 - **`decisions/` skills route to neighbors by role, never by name.**
-- **`generate-execution-prompt` reads `generate-plan`'s *decision table*
-  and *STOP gates* by name.** Rename either and the downstream skill stops
-  finding it.
 - **Ask for work products, never for reasoning.**
 
 ## Testing distribution

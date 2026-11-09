@@ -5,7 +5,7 @@ Reading for whoever edits this skill. A run reads `SKILL.md` alone.
 Settle a choice the user brings, when no option has been laid out yet and
 what decides it is theirs.
 
-One of seven skills built on one rule: **reversal cost decides who decides.**
+One of six skills built on one rule: **reversal cost decides who decides.**
 
 **The moment it owns.** Before any option exists. The user brings the choice,
 and the information that settles it is theirs: their constraint, their

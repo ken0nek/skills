@@ -5,7 +5,7 @@ Reading for whoever edits this skill. A run reads `SKILL.md` alone.
 Close a finished run. Graduate its decisions, lessons, and follow-ups to
 their durable homes, then delete the run directory.
 
-One of seven skills built on one rule: **reversal cost decides who decides.**
+One of six skills built on one rule: **reversal cost decides who decides.**
 
 **The moment it owns.** The close, once the work landed and the user
 answered the handoff's keep-or-change questions.

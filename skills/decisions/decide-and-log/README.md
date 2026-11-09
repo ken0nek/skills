@@ -4,7 +4,7 @@ Reading for whoever edits this skill. A run reads `SKILL.md` alone.
 
 Decide a reversible choice yourself, log it, and keep going.
 
-One of seven skills built on one rule: **reversal cost decides who decides.**
+One of six skills built on one rule: **reversal cost decides who decides.**
 
 **The moment it owns.** In the moment, in any session, in or out of a run:
 the choice that nothing settled in advance.

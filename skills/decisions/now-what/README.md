@@ -5,7 +5,7 @@ Reading for whoever edits this skill. A run reads `SKILL.md` alone.
 Orient the user at a checkpoint: after a move lands, on return, or when they
 have lost the thread.
 
-One of seven skills built on one rule: **reversal cost decides who decides.**
+One of six skills built on one rule: **reversal cost decides who decides.**
 
 **The moment it owns.** The checkpoint where the user has to decide and cannot
 see what the decisions are. It arrives most often right after a move lands
@@ -26,8 +26,8 @@ what to do, what only they decide.
 
 One entry per requirement in `SKILL.md`: the failure it corrects.
 
-**Why it is its own moment.** `generate-plan`, `generate-execution-prompt`,
-`decide-and-log`, and `harvest-run` all assume the user knows the question.
+**Why it is its own moment.** `generate-plan`, `decide-and-log`, and
+`harvest-run` all assume the user knows the question.
 This one answers *what is in front of me at all*, which arrives mid-run,
 between runs, and in sessions that never had a plan. It mirrors
 `decide-and-log`: that skill suppresses a hand-back, this one makes an

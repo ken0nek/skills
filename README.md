@@ -3,7 +3,7 @@
 [![check](https://github.com/ken0nek/skills/actions/workflows/check.yml/badge.svg)](https://github.com/ken0nek/skills/actions/workflows/check.yml)
 [![skills.sh](https://skills.sh/b/ken0nek/skills)](https://skills.sh/ken0nek/skills)
 
-One decision policy, and the seven skills that carry it. Process frameworks
+One decision policy, and the six skills that carry it. Process frameworks
 teach an agent to brainstorm, plan, and execute. This repo settles what they
 leave open. It says who decides each choice a run meets, what a run leaves on
 disk, and what graduates at the close. The same policy runs in sessions with
@@ -11,8 +11,7 @@ no run at all. There it decides which decisions reach you, and in what shape.
 
 | Skill | The decisions it owns | Leaves behind |
 |---|---|---|
-| [generate-plan](skills/run-lifecycle/generate-plan/) | decisions the plan can settle in advance | `plan.md` — decision table, STOP gates, per-task verification |
-| [generate-execution-prompt](skills/run-lifecycle/generate-execution-prompt/) | decisions the executor will meet, and who owns each | `execution-prompt.md` — the policy verbatim, the §0–8 handoff contract |
+| [generate-plan](skills/run-lifecycle/generate-plan/) | decisions the plan can settle in advance | `plan.md` — decision table, STOP gates, per-task verification, the executor contract with its §0–8 handoff |
 | [decide-and-log](skills/decisions/decide-and-log/) | decisions met in the moment, any session, in or out of the flow | a decision-log row, and a session that keeps moving |
 | [now-what](skills/decisions/now-what/) | decisions the user must make, when they have lost track of what those are | an answer they can act on — what to know, what to do, what only they decide |
 | [explain-to-decide](skills/decisions/explain-to-decide/) | one decision the user cannot evaluate yet | the option expanded — a real instance, the diff, the consequence, a pick and its counter |
@@ -25,7 +24,7 @@ npx skills add ken0nek/skills --skill decide-and-log           # one, by name
 npx skills add ken0nek/skills/skills/decisions/decide-and-log  # one, by path
 ```
 
-Six of the seven use only the Agent Skills spec's fields, so any harness that
+Five of the six use only the Agent Skills spec's fields, so any harness that
 reads `SKILL.md` runs them. harvest-run deletes a directory, so only the user
 invokes it — a rule the spec has no field for. `disable-model-invocation`
 carries it for Claude Code, `agents/openai.yaml` for Codex. A skill installed
@@ -49,8 +48,8 @@ the row with that reverse, and keeps going. Irreversible: the human decides.
 A cheap flag, a parameter, or both variants side by side turn the second into
 the first, and then the agent builds the options instead of asking. The
 executor cannot switch the rule off. The row is written at the moment of the
-call, and the same row travels plan → execution prompt → handoff → harvest.
-Three of the seven exist for the case where the answer really is yours: they
+call, and the same row travels plan → notes → handoff → harvest.
+Three of the six exist for the case where the answer really is yours: they
 decide what reaches you, in what shape, and how few questions it takes to
 settle.
 
@@ -61,7 +60,7 @@ agent makes a judgment call, often rightly, and never records it. The call
 surfaces during review of work already built on it, or never.
 
 [POLICY.md](POLICY.md) is canonical. Each skill carries the clauses its
-moment reaches — two of them the whole block — because a zero-context session
+moment reaches — one of them the whole block — because a zero-context session
 can only read what it was handed. In full:
 
 ```text
@@ -140,24 +139,24 @@ never the conversation.
    design spec into the run directory as `spec.md`. `clarify-to-decide`
    shapes the asks inside it.
 2. **[generate-plan](skills/run-lifecycle/generate-plan/)** governs the plan,
-   whoever writes it.
-3. **[generate-execution-prompt](skills/run-lifecycle/generate-execution-prompt/)**
-   writes the executor session's first message as a file.
-4. **Clear** the planning context. The artifacts carry the run.
-5. **Execute** — a fresh session runs the prompt and keeps `notes.md`, with
-   the decision log inside. It ends on `handoff.md`, or at a STOP gate on that
-   gate's handoff.
-6. **[harvest-run](skills/run-lifecycle/harvest-run/)**, once the work lands
+   whoever writes it, and closes it with the contract the executor works
+   under.
+3. **Clear** the planning context. The artifacts carry the run.
+4. **Execute** — a fresh session opens on a message that names `plan.md`,
+   runs it through your process layer's executor, and keeps `notes.md`, with
+   the decision log inside. It ends on `handoff.md`, or at a STOP gate on
+   that stop's handoff.
+5. **[harvest-run](skills/run-lifecycle/harvest-run/)**, once the work lands
    and you have answered the handoff's keep-or-change questions, graduates
    what is durable and deletes the run directory, in one closing commit.
 
 ```
-idea ─1→ spec.md ─2→ plan.md ─3→ execution-prompt.md
-                                      │ paste (step 5)
-                        notes.md (decision log inside)
-                                      │ run ends
-                                 handoff.md
-                                      │ review · work lands (step 6)
+idea ─1→ spec.md ─2→ plan.md (policy · executor contract)
+                            │ clear · fresh session names plan.md (step 4)
+                 notes.md (decision log inside)
+                            │ run ends
+                       handoff.md
+                            │ review · work lands (step 5)
                  decision log · lessons · backlog  (run directory deleted)
 ```
 
@@ -182,7 +181,7 @@ One policy at four distances from the user, inside the flow or outside it:
 
 ## Contributing
 
-An eighth skill has to own a decision moment these seven do not. What helps:
+A seventh skill has to own a decision moment these six do not. What helps:
 prose that tightens, drift fixes, and a requirement change shipped with the
 failure it corrects. That failure goes in the skill's `README.md`, under *Why
 each line exists*, beside the `Tuning` section for whoever edits it. Run

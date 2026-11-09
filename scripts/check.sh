@@ -2,8 +2,8 @@
 # The repo's one mechanical check. Everything else is verified by reading.
 #
 # 1. Every verbatim embed of the decision policy matches POLICY.md
-#    byte-for-byte: README.md, generate-plan, and the execution-prompt
-#    template. The decisions/ skills carry a compression no diff can check.
+#    byte-for-byte: README.md and generate-plan. The decisions/ skills
+#    carry a compression no diff can check.
 # 2. Every SKILL.md frontmatter stays inside the Agent Skills bounds: name
 #    matches its directory, description is one line within 1024 characters,
 #    a license is declared, README.md (with a `## Tuning` section) sits
@@ -49,13 +49,6 @@ check_embed "README.md" "$tmp/readme"
 
 fence skills/run-lifecycle/generate-plan/SKILL.md >"$tmp/plan"
 check_embed "generate-plan" "$tmp/plan"
-
-# The execution-prompt template embeds the policy unfenced, inside its own
-# ```text fence, so cut the span by the canon's first and last lines instead.
-awk -v first="$(head -n 1 "$tmp/canon")" -v last="$(tail -n 1 "$tmp/canon")" \
-  '$0==first{f=1} f; $0==last{f=0}' \
-  skills/run-lifecycle/generate-execution-prompt/SKILL.md >"$tmp/prompt"
-check_embed "generate-execution-prompt (template)" "$tmp/prompt"
 
 plain_yaml() { # $1 SKILL.md — frontmatter must parse as a flat YAML mapping
   awk -v f="$1" '

@@ -1,7 +1,7 @@
 # Decision policy
 
-Canonical copy. The README, `generate-plan`, and `generate-execution-prompt`
-embed the block below verbatim. The `decisions/` skills compress it to the
+Canonical copy. The README and `generate-plan` embed the block below
+verbatim. The `decisions/` skills compress it to the
 clauses they reach. Edit here first, then every embed. `sh scripts/check.sh`
 diffs the verbatim ones.
 

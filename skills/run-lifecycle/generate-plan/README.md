@@ -4,7 +4,7 @@ Reading for whoever edits this skill. A run reads `SKILL.md` alone.
 
 Write or govern any implementation plan for a zero-context executor.
 
-One of seven skills built on one rule: **reversal cost decides who decides.**
+One of six skills built on one rule: **reversal cost decides who decides.**
 
 **The moment it owns.** Plan time: every decision that a plan can settle
 before the executor meets it, and the contract the executor works under
