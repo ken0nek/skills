@@ -1,0 +1,10 @@
+# Sharp edges
+
+Read at step 2 when a pair involves an adaptive helper, a token's name, opacity, or a hard-coded system hex, and again after any rebase or merge during a pass.
+
+- **Adaptive helpers that switch only on `userInterfaceStyle` have no Increase-Contrast path.** `Color(light:dark:)` / `adaptiveColor(lightMode:darkMode:)` resolve dark, but ignore `accessibilityContrast` — so "Increase Contrast" does nothing. HIG asks that if you don't meet contrast by default you raise it when that's on. The fix is a high-contrast **colorset** variant (`"value": "high"` in Contents.json) or an env-driven branch — not another tweak to the two-way helper.
+- **An adaptive background wants an adaptive foreground.** Over `systemGray4`/`Theme.paper`/any `Color(light:dark:)`, a *fixed* `.white` or hex can only win at one end. `.primary` / `.secondary` move with the surface and usually beat any hand-picked value — reach for them before inventing a token.
+- **A token's name is not its color.** A circle filled with something called `accentText` is dark, so the "on-accent" label is the wrong end of the pair; a token that is fixed-dark *because a prominent button forces a white label* is wrong on a progress bar. Open the definition, read the value, and check that whatever made the token that color is still true at this site.
+- **Opacity is a composite.** `.white.opacity(0.7)` over a tint is **not** white — feed it as `#fff@0.7 on <tint>` so the script composites it, or you'll over-state the ratio.
+- **The audit is a snapshot; the tree moves.** A rebase or merge that deletes or rewrites a file silently drops the fix inside it, and the fix list still says it shipped. After any rebase or merge, re-check the list against `git diff --stat <base>..HEAD` before claiming the pass is done.
+- **Prefer system colors; don't hard-code system hex.** System colors ship accessible Light/Dark/Increase-Contrast variants for free, and HIG warns their values *fluctuate between releases* — a hard-coded `systemBlue` hex rots. Resolve at runtime.

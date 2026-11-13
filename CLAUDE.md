@@ -25,6 +25,11 @@ real run.
 - **Six skills, one per decision moment.** A seventh must own a moment
   these do not. Otherwise it belongs inside one. Each `README.md` opens
   with the moment it claims.
+- **The craft skills sit outside the policy.** `skills/apple/` and
+  `skills/audits/` carry no part of it. They follow the layout, the
+  install-alone rule, and `check.sh`, but not the six-skill count or
+  tool neutrality: they name the platform, tools, and scripts their job
+  needs.
 - **Each skill installs alone.** The policy is embedded, never linked. No
   skill names a repo-level file. A third-party source is cited by URL.
   `check.sh` fails a link that leaves the folder.

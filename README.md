@@ -184,9 +184,20 @@ One policy at four distances from the user, inside the flow or outside it:
   interview skill is installed, clarify-to-decide governs its rounds instead
   of running them.
 
+## Beyond the policy
+
+Three craft skills ship beside the six. They carry no part of the decision
+policy, and each installs alone like the rest.
+
+| Skill | What it does | Leaves behind |
+|---|---|---|
+| [hig-copywriting](skills/apple/hig-copywriting/) | writes and reviews the words in an Apple-platform app against Apple's HIG and localization docs | findings cited to the rule and its source, or fresh copy from a CTA pattern library |
+| [hig-contrast-and-size-check](skills/apple/hig-contrast-and-size-check/) | audits a SwiftUI app's color contrast in Light, Dark, and Increase Contrast, and its touch-target sizes | a pair list, a ratio per appearance, and a fix table gated against regressions |
+| [library-seam-audit](skills/audits/library-seam-audit/) | audits the seam between a library and its consuming apps — does the layering hold, and what belongs on which side | a read-only report — separation findings by direction, ranked elevation candidates |
+
 ## Contributing
 
-A seventh skill has to own a decision moment these six do not. What helps:
+A seventh decision skill has to own a decision moment these six do not. What helps:
 prose that tightens, drift fixes, and a requirement change shipped with the
 failure it corrects. That failure goes in the skill's `README.md`, under *Why
 each line exists*, beside the `Tuning` section for whoever edits it. Run
@@ -196,5 +207,8 @@ each line exists*, beside the `Tuning` section for whoever edits it. Run
 ## Provenance
 
 Written by Ken Tominaga with Claude, and dogfooded on real runs before it
-ships. No executable code in a skill folder: audit one by reading it.
+ships. The policy skills carry no executable code: audit one by reading it.
+hig-contrast-and-size-check ships two small scripts, a read-only shell
+gatherer and a standard-library Python ratio calculator; read them before
+running them.
 MIT ([LICENSE](LICENSE)).
