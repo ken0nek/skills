@@ -129,8 +129,10 @@ generator.
     grounded-report line is adapted from Anthropic's guidance on long
     autonomous runs.
   - *Autonomy* — the vendor guidance for unattended runs agrees on one
-    move: name the stops you want and the early stops you do not. The three
-    named non-stops are the ones executors produce. The scope line covers
+    move: name the stops you want and the early stops you do not. Three of
+    the four named non-stops are the ones executors produce; the fourth,
+    a report at a long turn or a finished milestone, is the one the vendor
+    guidance adds. The scope line covers
     both directions, because one executor class widens and another takes
     adjacent actions. `{{lessons}}` carries what the last harvest observed;
     an executor's failure mode is observed in a run, never cast in advance.

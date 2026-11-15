@@ -183,8 +183,9 @@ written; don't narrow, widen, or swap it, and take no adjacent action it
 did not ask for. End a turn only at a STOP gate, at a one-way door the
 policy could not convert, or at completion; stopping means writing the
 handoff below and ending on its question. A summary that announces the
-next step, an offer to continue, and a list of decisions none of which
-blocks the work are not stops: do the next thing instead.
+next step, an offer to continue, a list of decisions none of which blocks
+the work, and a report made because the turn has run long or a milestone
+is done are not stops: do the next thing instead.
 
 {{lessons}}
 
