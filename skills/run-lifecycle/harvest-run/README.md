@@ -67,12 +67,12 @@ One entry per requirement in `SKILL.md`: the failure it corrects.
 - **The commit pathspec-scoped** — an unscoped commit swallows another
   session's staged files, and the harvest's hash stops meaning "what
   graduated".
-- **Invocation is the yes to the deletion** — the run directory is never
-  tracked, so deleting it is a real one-way door on the policy's list. The
-  preconditions and name-only invocation make it the user's call, and the
-  graduations are committed first, so nothing durable goes with the folder.
-  The sentence states that, so a policy-carrying session does not stop at
-  the gate this skill exists to walk through.
+- **A confirm before the deletion** — the run directory is never tracked,
+  so deleting it is a real one-way door on the policy's list. The
+  graduations are committed first, but a folder that held something the
+  harvest missed is gone for good on a machine with no backup. The ask
+  names the directory and the commit, so the yes is to this deletion and
+  not to the invocation.
 
 ## Tuning
 

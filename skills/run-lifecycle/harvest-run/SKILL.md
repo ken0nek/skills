@@ -46,9 +46,10 @@ Then close, in this order:
    date, and repairing it falsifies the record.
 2. Commit the graduated files and the repaired references, scoped to those
    paths.
-3. Delete the run directory. It was never tracked, so the commit you just
-   made is what survives of it; invoking this skill after answering the
-   handoff is the user's yes to that deletion.
+3. Delete the run directory, after the user confirms. It was never
+   tracked, so the commit you just made is all that survives of it and the
+   deletion has no undo: name the directory and the commit, ask, and
+   delete only on a yes.
 
 Report: the decision doc's path, the rows added, what you dropped as already
 done, the follow-ups left for the user to file, the closing commit hash.
