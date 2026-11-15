@@ -17,8 +17,8 @@ answered the handoff's keep-or-change questions.
 
 **Not for** a run still in flight, or one whose handoff the user has not read.
 
-**Leaves behind** decision records, lessons, backlog rows, and no run
-directory.
+**Leaves behind** decision records, lesson lines in `AGENTS.md`, roadmap or
+tracker rows, and no run directory.
 
 ## Why each line exists
 
@@ -44,23 +44,35 @@ One entry per requirement in `SKILL.md`: the failure it corrects.
   whose sections are not numbered still maps by content.
 - **Why delete** — a kept run directory anchors future work to a spec that
   nobody maintains, and conceals the live follow-ups buried in its §8.
-- **The already-shipped filter** — a backlog row that ships leaves entirely.
+- **Lessons go to `AGENTS.md`** — an open lesson is a rule for how to work in
+  the repo, and `AGENTS.md` is where every agent already reads those. An
+  applied lesson graduates nowhere: the commit that applied it is its record.
+- **Follow-ups split by horizon** — near-term work belongs in the issue
+  tracker the user triages; work beyond the current version belongs in the
+  one roadmap file. A single backlog file mixed the two and duplicated the
+  tracker.
+- **The already-shipped filter** — a roadmap row that ships leaves entirely.
   The filter is applied at the moment follow-ups are most often found already
   done.
-- **Reference search before `git rm`** — a harvest that skips it leaves a
-  memo pointing at the run it deleted.
+- **Reference search before the deletion** — a harvest that skips it leaves
+  code or a current-truth doc pointing at a run that is gone.
+- **Dated records are not repaired** — a decision record cites what existed
+  on its date. Rewriting its reference makes it claim a citation it never
+  made, and the record is worth only its accuracy about that date.
 - **Lesson targets are a fixed set** — *executor*, *plan*, *skill*. A
   free-text "candidate target" left the next plan with nothing to select
   on. Executor tuning then had no path back into the run, and surfaced
   instead as a question to the user. A row targeting the executor is
   written as the line the executor will read.
-- **Both commits pathspec-scoped** — an unscoped pre-commit swallows the
-  graduations or another session's staged files. Then "one hash holds what
-  graduated and what died" becomes false.
-- **"Every byte stays in history"** — "deleting" sits on the policy's
-  one-way-door list. With the run directory committed first, the deletion is
-  reversible, and the sentence states that fact so a policy-carrying session
-  does not stop at the gate this skill exists to walk through.
+- **The commit pathspec-scoped** — an unscoped commit swallows another
+  session's staged files, and the harvest's hash stops meaning "what
+  graduated".
+- **Invocation is the yes to the deletion** — the run directory is never
+  tracked, so deleting it is a real one-way door on the policy's list. The
+  preconditions and name-only invocation make it the user's call, and the
+  graduations are committed first, so nothing durable goes with the folder.
+  The sentence states that, so a policy-carrying session does not stop at
+  the gate this skill exists to walk through.
 
 ## Tuning
 
@@ -70,7 +82,7 @@ of the decision doc. It is a distillation (chosen · rejected · why), not a
 transcript, and a decision doc is exactly the agent-authored shape that pads
 most. On a model that stops early, the risk is a harvest that graduates the
 artifacts and then reports back without deleting. The close is not done
-until the commit exists.
+until the commit exists and the run directory is gone.
 
 Lines the body no longer carries, each with the failure that returns it:
 
@@ -85,9 +97,12 @@ Lines the body no longer carries, each with the failure that returns it:
 - **"Check each against the code and its git history first"** — folded into
   "one that already shipped graduates nowhere". Restore the explicit check if
   shipped follow-ups start landing in the backlog.
-- **"With step 2 behind it, the deletion is a two-way door"** — kept as
-  "every byte stays in history". Restore the door wording if a session
-  carrying the policy stops before `git rm`.
+- **"Commit the run directory if dirty; `git rm` it … Every byte stays in
+  history"**, and the two-way-door wording before it — true only while run
+  directories were committed. Restore both on a repo that commits them.
+- **The lessons file and the backlog file** (`docs/LESSONS.md`,
+  `docs/BACKLOG.md`) — restore them as homes on a repo that keeps those
+  files instead of `AGENTS.md` lines and a roadmap.
 
 ## Install
 

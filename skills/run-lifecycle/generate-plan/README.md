@@ -61,6 +61,12 @@ generator.
 - **The spec lives in the run directory** — a spec written beside the run
   directory outlived the close as an orphan. One directory is the whole
   record, and one deletion ends it.
+- **The run directory is ignored, never committed** — a committed plan is
+  instruction-shaped prose that outlives its run: greppable, presumed
+  current, and followed after the work it describes has landed. What must
+  survive is written by the commit that lands the work, so nothing in the
+  folder needs history. The ignore line is added first, because a folder
+  that is not ignored is one `git add -A` from being committed.
 - **Done, stated first (1)** — a plan-writing skill's header states the goal
   and the global constraints. What it leaves out is a finish line the
   executor can check, and an executor without one either stops at a first
@@ -132,14 +138,19 @@ generator.
     seam review waited until after a long hand session; run at a gate, it
     found a defect in the plan's central feature. An empty reconcile scan is
     a miss, because a self-report under-reports by default.
-  - *The handoff path is a slot* — a committed handoff in a public repo
-    stays in history after the harvest deletes it. The planner can check
-    whether the repo is public; the executor need not.
+  - *The handoff stays in the run directory* — the directory is never
+    committed, so a handoff that names strategy, other projects, or
+    unpublished decisions never reaches history, public repo or not.
+  - *Lessons come from `AGENTS.md`* — an open lesson is a rule for how to
+    work in the repo, which is what `AGENTS.md` holds and every agent
+    loads. A separate lessons file is one more doc an agent has to be
+    pointed at, and its applied rows pile up.
   - *§0–8, every section kept* — §3 and §4 re-render the decision log as
     the policy's settled/OPEN split: the user audits one and makes the
-    other. §6 feeds the lessons file. §8's last item points at the close.
-    `harvest-run` maps §2–§6 and §8 by number, so the list is never
-    abbreviated, and an empty section reads "None." rather than vanishing.
+    other. §6 feeds the lessons in `AGENTS.md`. §8's last item points at
+    the close. `harvest-run` maps §2–§6 and §8 by number, so the list is
+    never abbreviated, and an empty section reads "None." rather than
+    vanishing.
 - **Fresh-eyes check (7)** — a separate reader with fresh context
   outperforms self-critique, and the plan-writing skill's own self-review is
   explicitly not a subagent. This rehearses the clear while fixing is cheap.
@@ -168,7 +179,7 @@ The plan-writing skill's own proportion check is the first lever; add "keep
 each task under ~15 lines" if it balloons anyway.
 
 The executor contract ships one text for every executor. Tune it through
-the lessons file, never by carrying variants inside the contract. A
+the lessons in `AGENTS.md`, never by carrying variants inside the contract. A
 handoff §6 row that names the failure, harvested with the target
 *executor*, becomes one line of the next plan's `{{lessons}}`. An executor
 that stops early gets a push to keep working. One that widens scope gets a
@@ -200,6 +211,9 @@ Lines the body no longer carries, each with the failure that returns it:
   logs one settled.
 - **"Without subagents, a fresh session on the file alone"** — restore it on
   a harness where the fresh-eyes check gets skipped for want of a subagent.
+- **The handoff-path slot** ("or a path outside the repo when the repo is
+  public and the handoff will name strategy, other projects, or unpublished
+  decisions") — restore it on a repo whose run directories are committed.
 
 ## Install
 

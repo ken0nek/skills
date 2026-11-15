@@ -21,9 +21,13 @@ existing plan, apply the requirements in place.
 
 Source: `spec.md` in the run directory (a spec written elsewhere moves
 there), else `brief.md` or the discussion. A continuation also reads the
-prior run's handoff and notes, or what they graduated into. Write `plan.md`
-in the run directory: `docs/plans/<YYYY-MM-DD>-<slug>/` by default, or
-wherever this repo keeps plans.
+prior run's handoff and notes, or what they graduated into.
+
+Write `plan.md` in the run directory: `.scratch/<YYYY-MM-DD>-<slug>/` at
+the repo root by default, or wherever this repo keeps plans. The folder is
+ignored and never committed; if the repo does not ignore `.scratch/` yet,
+add the ignore line before writing. What must outlive the run lands in the
+commit that lands the work, and the harvest deletes the folder.
 
 The deliverable is the plan, handed to the user for review. Executing it
 belongs to the session after the clear. Test every section against one
@@ -35,19 +39,22 @@ question: can the stranger execute it without guessing?
    in terms the executor can check before it stops.
 
 2. **One-way-door sweep.** List the decisions this work will force and
-   classify each by reversal cost alone. Cheap to reverse → decide it now;
-   if you cannot state your pick and why, it is unresolved: on an
-   outward-facing surface the user judges by eye, plan a task that builds
-   two or three named versions and log the choice OPEN; elsewhere, a
-   bounded spike with the decision attached to its outcome. Looks irreversible → convert it (a flag, a parameter, both
-   variants) when the conversion is quick; converted means decided. Genuinely
-   irreversible → ask the user before handing the plan over, or a **STOP
-   gate** in the plan: the task, the exact question, why it cannot be
-   defaulted. A measurement only the
-   user can take, that a later task's shape depends on → a STOP gate at that
-   task; one nothing depends on is verification owed at handoff, never a
-   gate. Done when every "should I ask?" the executor could meet is planned
-   here.
+   classify each by reversal cost alone:
+   - **Cheap to reverse** → decide it now. If you cannot state your pick
+     and why, it is unresolved: on an outward-facing surface the user
+     judges by eye, plan a task that builds two or three named versions
+     and log the choice OPEN; elsewhere, plan a bounded spike with the
+     decision attached to its outcome.
+   - **Looks irreversible** → convert it (a flag, a parameter, both
+     variants) when the conversion is quick; converted means decided.
+   - **Genuinely irreversible** → ask the user before handing the plan
+     over, or plan a **STOP gate**: the task, the exact question, why it
+     cannot be defaulted.
+
+   A measurement only the user can take, that a later task's shape depends
+   on → a STOP gate at that task; one nothing depends on is verification
+   owed at handoff, never a gate. Done when every "should I ask?" the
+   executor could meet is planned here.
 
 3. **Decision table**: one row per decision already made — in the design
    dialogue, in this sweep, by the user now, carried from the prior run —
@@ -124,12 +131,11 @@ stop, ask, and end your turn rather than ending on a promise.
 6. **Executor contract** — the plan's last section: the text inside the
    `markdown` fence between the two `--- contract start/end ---` lines
    below, its heading included, markers and fence left out. Fill
-   `{{handoff path}}` with `handoff.md` in the run
-   directory, or with a path outside the repo when the repo is public and
-   the handoff will name strategy, other projects, or unpublished
-   decisions. Replace `{{lessons}}` with the open rows of the lessons file
-   (`docs/LESSONS.md` by default) that target the *executor*, one line
-   each; with none, delete that line.
+   `{{handoff path}}` with `handoff.md` in the run directory; the run
+   directory is never committed, so the handoff needs no other home.
+   Replace `{{lessons}}` with the open lesson lines in the repo's
+   `AGENTS.md` that target the *executor*, one line each; with none,
+   delete that line.
 
 7. **Fresh-eyes check.** First against itself: every literal string a task
    writes against every absence the plan asserts; every interface a task
@@ -192,8 +198,8 @@ At every stop and at completion:
    working tree, noting the evidence; a row the tree contradicts is a
    coverage gap for the handoff's §3.
 3. Write {{handoff path}} (at a stop, `handoff-task-<N>.md` beside it,
-   named for the task it stopped before), true
-   to what ran: real commands, numbers, and commit ranges. Keep every
+   named for the task it stopped before), true to what ran: real
+   commands, numbers, and commit ranges. Keep every
    section; one with nothing to report reads "None." Tables and tight
    bullets; a decision that changes the user's product gets its own row.
    0. Snapshot — repo, branch, HEAD, working-tree state, push status, the

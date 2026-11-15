@@ -16,7 +16,7 @@ no run at all. There it decides which decisions reach you, and in what shape.
 | [now-what](skills/decisions/now-what/) | decisions the user must make, when they have lost track of what those are | an answer they can act on — what to know, what to do, what only they decide |
 | [explain-to-decide](skills/decisions/explain-to-decide/) | one decision the user cannot evaluate yet | the option expanded — a real instance (built behind a switcher when it is judged by eye), the diff, the consequence, a pick and its counter |
 | [clarify-to-decide](skills/decisions/clarify-to-decide/) | a decision the user brings, before the options exist | only the questions that change the answer — then a pick, its counter, and a row to paste forward |
-| [harvest-run](skills/run-lifecycle/harvest-run/) | decisions graduating out of the run | decision records, lessons, backlog rows — and no run directory |
+| [harvest-run](skills/run-lifecycle/harvest-run/) | decisions graduating out of the run | decision records, lessons in `AGENTS.md`, roadmap rows — and no run directory |
 
 ```sh
 npx skills add ken0nek/skills                                  # every skill
@@ -153,7 +153,7 @@ never the conversation.
    that stop's handoff.
 5. **[harvest-run](skills/run-lifecycle/harvest-run/)**, once the work lands
    and you have answered the handoff's keep-or-change questions, graduates
-   what is durable and deletes the run directory, in one closing commit.
+   what is durable in one closing commit, then deletes the run directory.
 
 ```
 idea ─1→ spec.md ─2→ plan.md (policy · executor contract)
@@ -162,7 +162,7 @@ idea ─1→ spec.md ─2→ plan.md (policy · executor contract)
                             │ run ends
                        handoff.md
                             │ review · work lands (step 5)
-                 decision log · lessons · backlog  (run directory deleted)
+                 decision log · lessons · roadmap  (run directory deleted)
 ```
 
 `harvest-run` is the one skill you invoke by name.
